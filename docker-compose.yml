@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  codelab2:
+    image: postgres:alpine
+    ports:
+      - 5431:5431
+    container_name: 'codelab2'
+    restart: always
+    volumes:
+      - codelab2-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+
+volumes:
+  codelab2-data:
